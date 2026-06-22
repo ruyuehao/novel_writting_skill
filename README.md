@@ -1,12 +1,13 @@
 # 网文写作技巧指南
 
-基于 opencode skill 框架的网文写作辅助工具，专注于仙侠、玄幻品类，提供 12 个写作维度的技巧参考、4 个写作工作流、6 份检查清单，通过 MCP 服务器按需精确检索。
+网文写作辅助工具，专注于仙侠、玄幻品类，提供 12 个写作维度的技巧参考、4 个写作工作流、6 份检查清单，通过 MCP 服务器按需精确检索。本 skill 在 **opencode 框架** 和 **任意 AI 平台**（复制 SYSTEM_PROMPT.md 到 system prompt）中均可使用。
 
 ## 目录结构
 
 ```
 novel-writing/
-├── SKILL.md                        # Skill 主入口（工作流定义）
+├── SKILL.md                        # Skill 主入口（opencode 框架）
+├── SYSTEM_PROMPT.md                # 通用入口（任意 AI 平台）
 ├── validate.ps1                    # 结构校验脚本
 ├── README.md                       # 本文档
 ├── mcp-server/                     # MCP 参考检索服务器
@@ -94,7 +95,20 @@ npm run build
 
 将 `<skill-绝对路径>` 替换为 skill 所在目录的实际路径，或用 `register-mcp.ps1 -PrintOnly` 自动生成。
 
-## 使用方式
+## 通用使用方式（任意 AI 平台）
+
+将 `SYSTEM_PROMPT.md` 的内容完整复制到 AI 的 system prompt（系统提示词）中即可使用。无需 opencode 框架，Claude.ai、ChatGPT、DeepSeek Chat、Cursor 等平台均可。
+
+包含：
+- 角色定义与激活关键词
+- 4 个完整工作流
+- 12 个写作维度的参考索引
+- 6 份检查清单
+- 执行规范与写作示例
+
+如果 AI 平台支持 MCP 协议，可按下方说明连接 MCP 服务器实现精确技巧检索；不支持的平台可直接阅读 `references/` 目录下的参考文件。
+
+## 使用方式（opencode）
 
 ### 方式一：通过工具调用（推荐）
 
@@ -191,9 +205,10 @@ SKILL.md 定义了 4 个写作工作流，根据当前场景自动匹配：
 
 1. **`mcp-server/build-index.js` 的 `SECTION_MAP`** — 添加新条目，指定 `file`、`heading`、`domains`
 2. **`mcp-server/build-index.js` 的 `CHECKLIST_MAP`** — 如果使用了新的 domain 名称，需要将其映射到检查清单
-3. **`SKILL.md`** — 如果需要新增检查清单，添加 `### XXX检查清单` 及清单项
+3. **`SKILL.md` / `SYSTEM_PROMPT.md`** — 如需新增检查清单，同步更新两处
 4. **`README.md` 的"域间交叉引用"表** — 更新维度的"小节数"和"跨域引用"
 5. **`agents/*.yaml` 的 `activation_keywords`** — 将新的关键词加入各 agent 配置，确保 LLM 能正确激活
+6. **`SYSTEM_PROMPT.md`** — 更新激活关键词列表和 Reference Index 表
 
 修改后运行 `npm run build` 重建索引，观察控制台是否有 `[WARN]` 输出（如果 `SECTION_MAP` 未完全覆盖新增标题会警告）。
 运行 `npm test` 确认全部测试通过。
@@ -206,4 +221,5 @@ SKILL.md 定义了 4 个写作工作流，根据当前场景自动匹配：
 4. 将新维度的 domain 名加入 `mcp-server/index.js` 的 `VALID_DOMAINS` 数组（如果 server 做了校验）
 5. 更新 `README.md` 的"使用方式"维表、"域间交叉引用"表、"写作工作流"表
 6. 更新 `agents/*.yaml` 的 `activation_keywords`，增加新维度的相关关键词
-7. 运行 `npm run build && npm test` 验证索引构建和测试
+7. 更新 `SYSTEM_PROMPT.md` 的激活关键词列表和 Reference Index 表
+8. 运行 `npm run build && npm test` 验证索引构建和测试
