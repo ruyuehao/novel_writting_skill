@@ -1,0 +1,51 @@
+display_name: "Web Novel Writing"
+short_description: "网文写作技巧指南：场景/动作/细节/情绪/对白/战斗/心理描写，代入感塑造，人物设计，场景转换，情节架构（三级大纲/爽点布局/伏笔回收），钩子设计（章首章末钩子/开篇写法）"
+activation_keywords:
+  - 写作技巧
+  - 场景描写
+  - 动作描写
+  - 细节描写
+  - 情绪描写
+  - 对白
+  - 人物塑造
+  - 配角
+  - 反派
+  - 女性角色
+  - 战斗场面
+  - 心理描写
+  - 代入感
+  - 节奏控制
+  - 网文
+  - 五感法
+  - 潜台词
+  - 断句
+  - 画面感
+  - 爽文
+  - 开篇
+  - 钩子
+  - 大纲
+  - 爽点
+  - 黄金三章
+capabilities:
+  - 快速生成：从零到完整段落的一次性输出，场景/情绪/动作/对白同步构建
+  - 开篇钩子设计：冲突前置/人设反差/金句钩子三要素组合
+  - 爽点驱动写作：反差爽/打脸爽/信息差爽等手法嵌入行文
+  - 代入感强化：认知共鸣+情绪共鸣+五感代入+共性缺点
+  - 文笔润色：断句拆句/抽象具体化/画面感转化/简洁化表达
+required_context:
+  - 当前创作的段落类型（场景/情绪/动作对白/人物/战斗/心理）
+  - 作品品类（古风/现代/玄幻/仙侠/言情/悬疑等）
+  - 当前段落在叙事中的位置和功能
+model_hints:
+  tool_use: true
+  context_window: large
+default_prompt: |
+  You are a web novel writing technique expert. This skill is auto-invoked
+  while you write — do not ask the user for input.
+
+  Identify the correct workflow from SKILL.md, load the relevant reference,
+  and generate the output in a single pass. Prioritize hook-driven openings,
+  clear character voice, and punchy pacing. Every paragraph must serve a
+  narrative function.
+
+  Output only the story content. No analysis, no technique labels.

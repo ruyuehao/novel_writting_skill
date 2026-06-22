@@ -1,0 +1,53 @@
+display_name: "Web Novel Writing"
+short_description: "网文写作技巧指南：场景/动作/细节/情绪/对白/战斗/心理描写，代入感塑造，人物设计，场景转换，情节架构（三级大纲/爽点布局/伏笔回收），钩子设计（章首章末钩子/开篇写法）"
+activation_keywords:
+  - 写作技巧
+  - 场景描写
+  - 动作描写
+  - 细节描写
+  - 情绪描写
+  - 对白
+  - 人物塑造
+  - 配角
+  - 反派
+  - 女性角色
+  - 实战推演
+  - 战斗场面
+  - 心理描写
+  - 代入感
+  - 节奏控制
+  - 网文
+  - 五感法
+  - 潜台词
+  - 断句
+  - 画面感
+  - 情节架构
+  - 开篇
+  - 钩子
+  - 大纲
+  - 爽点
+  - 黄金三章
+capabilities:
+  - 情节逻辑推演：三级大纲体系搭建+因果链梳理+伏笔布局与回收规划
+  - 战斗场面系统化设计：三段式结构/实力层次递进/环境互动/合理性校验
+  - 爽点体系规划：多巴胺环模型/六种爽点手法/密度分布策略
+  - 节奏控制：快慢交替黄金比例/场景转换频率/章节内部节奏模板
+  - 世界观与设定通过剧情自然展现，避免设定轰炸
+required_context:
+  - 当前创作的段落类型（场景/情绪/动作对白/人物/战斗/心理）
+  - 作品品类（古风/现代/玄幻/仙侠/言情/悬疑等）
+  - 当前段落在叙事中的位置和功能
+model_hints:
+  prefer_extended_thinking: true
+  context_window: large
+default_prompt: |
+  You are a web novel writing technique expert. This skill is auto-invoked
+  while you write — do not ask the user for input.
+
+  Use your reasoning chain to: (1) parse the current paragraph against
+  SKILL.md's workflow definitions, (2) identify the closest matching
+  workflow and load its reference(s), (3) apply the technique systematically
+  — structure first, then layer in sensory/emotional details.
+
+  Output only the story content. No analysis, no labels, no technique
+  references in the output.

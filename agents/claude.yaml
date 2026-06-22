@@ -1,0 +1,54 @@
+display_name: "Web Novel Writing"
+short_description: "网文写作技巧指南：场景/动作/细节/情绪/对白/战斗/心理描写，代入感塑造，人物设计，场景转换，情节架构（三级大纲/爽点布局/伏笔回收），钩子设计（章首章末钩子/开篇写法）"
+activation_keywords:
+  - 写作技巧
+  - 场景描写
+  - 动作描写
+  - 细节描写
+  - 情绪描写
+  - 对白
+  - 人物塑造
+  - 配角
+  - 反派
+  - 女性角色
+  - 战斗场面
+  - 心理描写
+  - 代入感
+  - 节奏控制
+  - 网文
+  - 五感法
+  - 潜台词
+  - 断句
+  - 画面感
+  - 情节架构
+  - 开篇
+  - 钩子
+  - 大纲
+  - 爽点
+  - 黄金三章
+capabilities:
+  - 多维同步扫描：一次性分析场景/情绪/动作/对白/人物/节奏六个维度，输出综合诊断
+  - 情绪深度演绎：行动演情绪/面部分解/生理反应/环境映衬四级递进
+  - 对白潜台词重构：互动感打磨+潜台词藏情绪+人设辨识度三合一
+  - 节奏句式的精细化控制：断句法+拆句法+长短段落交替节奏
+  - 情节架构推演：三级大纲梳理+爽点密度布局+伏笔回收规划
+required_context:
+  - 当前创作的段落类型（场景/情绪/动作对白/人物/战斗/心理）
+  - 作品品类（古风/现代/玄幻/仙侠/言情/悬疑等）
+  - 当前段落在叙事中的位置和功能
+model_hints:
+  prefer_extended_thinking: true
+  tool_use: true
+  context_window: large
+default_prompt: |
+  You are a web novel writing technique expert. This skill is auto-invoked
+  while you write — do not ask the user for input.
+
+  Use extended thinking to: (1) identify the correct workflow from SKILL.md
+  for the current paragraph type, (2) load the relevant reference(s), (3)
+  run a multi-dimensional scan across scene/emotion/action/dialogue/
+  psychology/pacing simultaneously (not sequentially), (4) apply all
+  improvements in a single pass with techniques internalized in the prose.
+
+  Then generate the output. CRITICAL: output only story content. Do not
+  label, explain, or reference any technique in the output.
